@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E1F6828A-AABD-4AFA-9989-80F7D1E3CC22}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>NET.S._2018.Popivnenko._20</RootNamespace>
-    <AssemblyName>NET.S.2018.Popivnenko.20</AssemblyName>
+    <ProjectGuid>{292D9B52-18C9-45EB-A933-C564ACA31E7E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NET.S._2018.Popivnenko._20.AntiPattern</RootNamespace>
+    <AssemblyName>NET.S.2018.Popivnenko.20.AntiPattern</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,17 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Discipline.cs" />
+    <Compile Include="Instructor.cs" />
+    <Compile Include="MyBigInterface.cs" />
+    <Compile Include="Repository.cs" />
+    <Compile Include="Service.cs" />
+    <Compile Include="ServiceException.cs" />
+    <Compile Include="Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NET.S.2018.Popivnenko.20.AntiPattern\NET.S.2018.Popivnenko.20.AntiPattern.csproj">
-      <Project>{292d9b52-18c9-45eb-a933-c564aca31e7e}</Project>
-      <Name>NET.S.2018.Popivnenko.20.AntiPattern</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
