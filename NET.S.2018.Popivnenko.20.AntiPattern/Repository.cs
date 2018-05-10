@@ -40,11 +40,12 @@ namespace NET.S._2018.Popivnenko._20.AntiPattern
             Console.WriteLine($"repository does stuff {data}");
         }
 
-        public void SaveDiscipline(List<Discipline> list)
+        public virtual void SaveDiscipline(List<Discipline> list)
         {
             if (!File.Exists(Path))
             {
-                File.Create(Path);
+                var stream = File.Create(Path);
+                stream.Close();
             }
 
             FileStream fileStream = new FileStream(Path, FileMode.Open);
@@ -59,11 +60,12 @@ namespace NET.S._2018.Popivnenko._20.AntiPattern
             fileStream.Close();
         }
 
-        public List<Discipline> LoadDiscipline()
+        public virtual List<Discipline> LoadDiscipline()
         {
             if (!File.Exists(Path))
             {
-                File.Create(Path);
+                var stream = File.Create(Path);
+                stream.Close();
             }
 
             FileStream fileStream = new FileStream(Path, FileMode.Open);
@@ -80,11 +82,12 @@ namespace NET.S._2018.Popivnenko._20.AntiPattern
             return data;
         }
 
-        public void SaveData(List<object> list)
+        public virtual void SaveData(List<object> list)
         {
             if (!File.Exists(Path))
             {
-                File.Create(Path);
+                var stream = File.Create(Path);
+                stream.Close();
             }
 
             FileStream fileStream = new FileStream(Path, FileMode.Open);
@@ -100,11 +103,12 @@ namespace NET.S._2018.Popivnenko._20.AntiPattern
 
         }
 
-        public List<object> LoadData()
+        public virtual List<object> LoadData()
         {
             if (!File.Exists(Path))
             {
-                File.Create(Path);
+                var stream = File.Create(Path);
+                stream.Close();
             }
 
             FileStream fileStream = new FileStream(Path, FileMode.Open);

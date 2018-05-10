@@ -9,13 +9,14 @@ namespace NET.S._2018.Popivnenko._20.AntiPattern
         public List<Student> Students;
         public List<Instructor> Instructors;
         public List<Discipline> Disciplines;
-        public Repository Repository;
+        public IMyBigInterface ServiceHelper;
 
-        public Service()
+        public Service(IMyBigInterface helper)
         {
             Students = new List<Student>();
             Instructors = new List<Instructor>();
             Disciplines = new List<Discipline>();
+            ServiceHelper = helper;
         }
 
 
@@ -74,12 +75,12 @@ namespace NET.S._2018.Popivnenko._20.AntiPattern
             {
                 throw new ServiceException("list is null");
             }
-            Repository.SaveData(list);
+            ServiceHelper.SaveData(list);
         }
 
         public List<object> LoadData()
         {
-            return Repository.LoadData();
+            return ServiceHelper.LoadData();
         }
 
         public void SaveDiscipline(List<Discipline> list)
@@ -89,12 +90,12 @@ namespace NET.S._2018.Popivnenko._20.AntiPattern
                 throw new ServiceException("list is null");
             }
 
-            Repository.SaveDiscipline(list);
+            ServiceHelper.SaveDiscipline(list);
         }
 
         public List<Discipline> LoadDiscipline()
         {
-            return Repository.LoadDiscipline();
+            return ServiceHelper.LoadDiscipline();
         }
     }
 }

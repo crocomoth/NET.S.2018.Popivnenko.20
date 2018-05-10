@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace NET.S._2018.Popivnenko._20.AntiPattern
 {
+    [Serializable]
     public class Discipline
     {
         public string Name;

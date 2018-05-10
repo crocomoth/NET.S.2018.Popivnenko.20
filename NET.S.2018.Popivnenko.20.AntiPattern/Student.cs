@@ -2,6 +2,7 @@
 
 namespace NET.S._2018.Popivnenko._20.AntiPattern
 {
+    [Serializable]
     public class Student
     {
         public string Name;
